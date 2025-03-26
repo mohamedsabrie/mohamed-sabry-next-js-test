@@ -5,7 +5,6 @@ export const dynamic = "force-static";
 export default async function Home() {
   const data = await fetch("https://fakestoreapi.com/products");
   const products = await data.json();
-  console.log(products, "products");
   return (
     <div className="">
       <div className="flex flex-col items-center ">

@@ -1,10 +1,11 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --slate-gray: #484848;
-  --light-gray: #DEDFE1;
+  --light-gray: #dedfe1;
+  --mid-gray: #666666;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-slate-gray: var(--slate-gray);
   --color-light-gray: var(--light-gray);
+  --color-mid-gray: var(--mid-gray);
   --font-volkhov: var(--font-volkhov), sans-serif;
   --font-poppins: var(--font-poppins), sans-serif;
   --font-jost: var(--font-jost), sans-serif;
@@ -20,6 +22,14 @@
 @layer utilities {
   .container {
     @apply mx-auto max-w-7xl px-10;
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 

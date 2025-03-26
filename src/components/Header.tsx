@@ -3,9 +3,10 @@ import Logo from './ui/Logo';
 import SearchIcon from '@assets/search.svg';
 import PersonIcon from '@assets/person.svg';
 import StarIcon from '@assets/star.svg';
-import CartIcon from '@assets/cart.svg';
+// import CartIcon from '@assets/cart.svg';
 import Image from 'next/image';
 import Navigation from './Navigation';
+import CartIcon from './ui/CartIcon';
 
 function Header() {
   return (
@@ -16,7 +17,8 @@ function Header() {
         <Image src={SearchIcon} alt="search-icon" />
         <Image src={PersonIcon} alt="person-icon" />
         <Image src={StarIcon} alt="star-icon" />
-        <Image src={CartIcon} alt="cart-icon" />
+        <CartIcon />
+        {/* <Image src={CartIcon} alt="cart-icon" /> */}
       </div>
     </header>
   );

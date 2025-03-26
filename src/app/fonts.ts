@@ -1,4 +1,4 @@
-import { Volkhov, Poppins } from "next/font/google";
+import { Volkhov, Poppins, Jost } from "next/font/google";
 
 export const volkhov = Volkhov({
   subsets: ["latin"],
@@ -9,4 +9,9 @@ export const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: "400",
+});
+export const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+  // weight: "400",
 });

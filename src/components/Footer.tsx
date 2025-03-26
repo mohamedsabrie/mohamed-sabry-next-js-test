@@ -4,9 +4,9 @@ import Navigation from './Navigation';
 
 function Footer() {
   return (
-    <footer className="border-light-gray border-t font-poppins text-slate-gray">
+    <footer className="border-light-gray border-t font-poppins text-slate-gray mt-24">
       <div className="container  flex flex-col  gap-y-14 pt-8 pb-10 ">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col lg:flex-row gap-y-5 lg:gap-y-0 items-center justify-between">
           <Logo size="md" />
           <Navigation /> 
         </div>

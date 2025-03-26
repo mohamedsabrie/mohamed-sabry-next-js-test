@@ -26,7 +26,6 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
 
   const data = await fetch(`https://fakestoreapi.com/products/${id}`);
   const productData = await data.json();
-  console.log(productData, "productData");
   const { image } = productData;
 
   return (

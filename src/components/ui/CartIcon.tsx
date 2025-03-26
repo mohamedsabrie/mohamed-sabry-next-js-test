@@ -11,7 +11,6 @@ export default function CartIcon() {
   const { getTotalItems } = useCartStore();
   const [mounted, setMounted] = useState(false);
   const totalItems = getTotalItems();
-
   useEffect(() => {
     setMounted(true);
   }, []);

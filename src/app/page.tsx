@@ -6,7 +6,6 @@ export default async function Home() {
   const data = await fetch("https://fakestoreapi.com/products");
   const products = await data.json();
   return (
-    <div className="">
       <div className="flex flex-col items-center ">
         <h1 className="text-[42px]">Fashion</h1>
         <Breadcrumbs
@@ -23,6 +22,5 @@ export default async function Home() {
         />
         <Products productsData={products} />
       </div>
-    </div>
   );
 }

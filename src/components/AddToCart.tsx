@@ -2,53 +2,35 @@
 
 import useCartStore from "@/lib/stores/cart-store";
 import { ProductType } from "@/lib/types";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Quantity from "./Quantity";
+import { useRouter } from "next/navigation";
 
 function AddToCart({ product }: { product: ProductType }) {
   const { addToCart, cart } = useCartStore();
-  console.log(cart, "cart")
-  // Initialize quantity from cart if product exists
-  const existingItem = cart.find(item => item.id === product.id);
-  const [quantity, setQuantity] = useState(existingItem?.quantity || 1);
+  const { push } = useRouter();
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    const existingItem = cart.find((item) => item.id === product.id);
+    if (existingItem) {
+      setQuantity(existingItem.quantity);
+    }
+  }, [cart, product.id]);
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-  };
-
-  const handleQuantityChange = (value: number) => {
-    // Ensure quantity is between 1 and 999
-    setQuantity(Math.min(999, Math.max(1, value)));
+    push("/cart");
   };
 
   return (
     <div>
       <h3 className="mb-3">Quantity</h3>
       <div className="flex items-center gap-x-[30px]">
-        <div className="border py-3 border-[#EEEEEE] flex items-center">
-          <div
-            onClick={() => handleQuantityChange(quantity - 1)}
-            className="cursor-pointer w-10 flex items-center justify-center text-2xl"
-          >
-            <span className="w-[9px] bg-black h-[2px] inline-block" />
-          </div>
-          <input
-            type="number"
-            value={quantity}
-            onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
-            min="1"
-            max="999"
-            className="w-16 text-center focus:outline-none"
-          />
-          <div
-            onClick={() => handleQuantityChange(quantity + 1)}
-            className="text-center w-10 h-full cursor-pointer"
-          >
-            <span>&#43;</span>
-          </div>
-        </div>
-        <button 
+        <Quantity quantity={quantity} setQuantity={setQuantity} />
+        <button
           onClick={handleAddToCart}
-          className="border flex-1 border-black py-3 px-6"
+          className="border flex-1 border-black py-3 px-6 cursor-pointer"
         >
           Add To Cart
         </button>

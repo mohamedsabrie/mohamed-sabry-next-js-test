@@ -1,5 +1,10 @@
+# FASCO - Modern E-commerce Platform
+
+A modern e-commerce platform built with Next.js, offering a seamless shopping experience with real-time cart management and responsive design.
+
 ## Project Structure
 
+```plaintext
 src/
 ├── app/          # Next.js app router pages
 ├── components/   # Reusable UI components
@@ -7,10 +12,7 @@ src/
 
 public/
 └── assets/      # Static assets and images
-
-# FASCO - Modern E-commerce Platform
-
-A modern e-commerce platform built with Next.js, offering a seamless shopping experience with real-time cart management and responsive design.
+```
 
 ## Tech Stack
 

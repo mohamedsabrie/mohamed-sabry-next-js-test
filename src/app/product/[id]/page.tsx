@@ -47,7 +47,6 @@ async function ProductPage({ params }: {   params: Promise<{ id: string }>;
   );
 }
 
-// Fix the generateMetadata function
 export async function generateMetadata({
   params,
 }: {

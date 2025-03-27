@@ -61,3 +61,35 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 please check the link below
 https://fasco-sabry-store.vercel.app/
+
+
+## Performance & SEO Optimizations
+
+- **Static Site Generation (SSG)**
+  - Product listing page is statically generated at build time
+  - Improved initial page load performance
+  - Better SEO optimization
+
+- **Incremental Static Regeneration (ISR)**
+  - Product detail pages use ISR with 1-hour revalidation
+  - Dynamic content stays fresh while maintaining performance
+  - Reduces database load
+
+- **Next.js Caching Strategies**
+  - Route cache for faster navigation
+  - Data cache for optimized API responses
+  - Static assets caching
+
+- **Component Optimizations**
+  - React.memo for preventing unnecessary re-renders
+  - Image optimization with next/image
+  - Code splitting and lazy loading
+
+- **SEO Enhancements**
+  - Dynamic metadata generation for product pages
+  - OpenGraph tags for better social sharing
+  - Twitter card integration
+  - Custom titles and descriptions
+  - Proper HTML semantics
+  - Robots directives configuration
+  - Structured site navigation

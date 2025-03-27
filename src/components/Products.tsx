@@ -14,15 +14,17 @@ function Products({ productsData }: { productsData: ProductType[] }) {
               height={400}
               src={product.image}
               alt={product.title}
+              className="object-contain w-auto h-auto max-h-[400px]" 
+
             />
           </Link>
 
           <div className="flex flex-col">
-            <h3 className="mt-5 truncate" title={product.title}>
-             <Link prefetch={false} href={`/products/${product.id}`} >{product.title}</Link> 
+            <h3 className="mt-5 line-clamp-2 min-h-[48px]" title={product.title}>
+              <Link prefetch={false} href={`/product/${product.id}`}>{product.title}</Link>
             </h3>
             <span className="text-sm text-gray-500 mt-1">{product.category}</span>
-            <p className="font-jost mt-1">{product.price}</p>
+            <p className="font-jost mt-1">${product.price}</p>
           </div>
         </div>
       ))}

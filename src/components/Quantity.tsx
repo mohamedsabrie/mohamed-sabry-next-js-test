@@ -39,7 +39,7 @@ function Quantity({
       />
       <div
         onClick={() => handleQuantityChange(quantity + 1)}
-        className="text-center w-10 h-full cursor-pointer  py-3"
+        className="text-center text-lg w-10 h-full cursor-pointer  py-3"
       >
         <span>&#43;</span>
       </div>

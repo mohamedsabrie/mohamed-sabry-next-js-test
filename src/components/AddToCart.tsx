@@ -26,11 +26,11 @@ function AddToCart({ product }: { product: ProductType }) {
   return (
     <div>
       <h3 className="mb-3">Quantity</h3>
-      <div className="flex items-center gap-x-[30px]">
+      <div className="flex flex-col sm:flex-row sm:items-center w-full gap-y-5 sm:gap-y-0 sm:gap-x-[30px]">
         <Quantity quantity={quantity} setQuantity={setQuantity} />
         <button
           onClick={handleAddToCart}
-          className="border flex-1 border-black py-3 px-6 cursor-pointer"
+          className="border w-full flex-1 border-black py-3 px-6 cursor-pointer"
         >
           Add To Cart
         </button>

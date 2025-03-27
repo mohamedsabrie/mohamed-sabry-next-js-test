@@ -10,9 +10,11 @@ import CartIcon from './ui/CartIcon';
 
 function Header() {
   return (
-    <header className="flex items-center justify-between py-[70px] container font-poppins text-slate-gray ">
+    <header className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row items-center justify-between py-[70px] container font-poppins text-slate-gray ">
       <Logo size="lg" />
+     <div className='hidden lg:block'>
       <Navigation />
+      </div> 
       <div className="flex items-center space-x-7">
         <Image src={SearchIcon} alt="search-icon" />
         <Image src={PersonIcon} alt="person-icon" />

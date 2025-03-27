@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 type SizeVariant = 'md' | 'lg';
@@ -6,7 +7,7 @@ const LOGO_SIZES: Record<SizeVariant, string> = {
   lg: 'text-[52px]',
 };
 function Logo({ size }: { size: 'md' | 'lg' }) {
-  return <div className={`text-slate-gray font-volkhov leading-none ${LOGO_SIZES[size]} `}>FASCO</div>;
+  return <Link  className={`text-slate-gray font-volkhov leading-none ${LOGO_SIZES[size]} `} href="/">FASCO</Link>;
 }
 
 export default Logo;

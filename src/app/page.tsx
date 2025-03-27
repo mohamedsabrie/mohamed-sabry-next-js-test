@@ -7,7 +7,7 @@ export default async function Home() {
   const products = await data.json();
   return (
       <div className="flex flex-col items-center ">
-        <h1 className="text-[42px]">Fashion</h1>
+        <h1 className="text-4xl sm:text-[42px] mb-4">Fashion</h1>
         <Breadcrumbs
           items={[
             {

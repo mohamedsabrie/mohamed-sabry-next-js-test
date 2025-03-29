@@ -17,7 +17,13 @@ export default function CartIcon() {
 
   return (
     <Link href="/cart" className="relative inline-block">
-      <Image src={CartImage} alt="cart-icon" />
+      <Image
+        width={20}
+        height={20}
+        className="w-5 h-5"
+        src={CartImage}
+        alt="cart-icon"
+      />
       {mounted && totalItems > 0 && <Badge count={totalItems} />}
     </Link>
   );

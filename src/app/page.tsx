@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export const dynamic = "force-static";
 
 export default async function Home() {
-  const data = await fetch("https://fakestoreapi.com/products");
+  const data = await fetch("https://fakestoreapi.com/products", { cache: 'force-cache' });
   const products = await data.json();
   return (
       <div className="flex flex-col items-center ">

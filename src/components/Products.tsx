@@ -5,9 +5,9 @@ import React from "react";
 
 function Products({ productsData }: { productsData: ProductType[] }) {
   return (
-    <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-[30px] mt-24">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-[30px] mt-24">
       {productsData.map((product, index) => (
-        <div key={product.id} className="flex flex-col ">
+        <div key={product.id} className="flex flex-col">
           <Link prefetch={false} href={`/product/${product.id}`} className="flex-1 flex justify-center items-center relative aspect-[3/4] w-full">
             <Image
               width={300}
@@ -15,15 +15,8 @@ function Products({ productsData }: { productsData: ProductType[] }) {
               src={product.image}
               alt={product.title}
               className="object-contain absolute inset-0 w-full h-full"
-              priority={
-                // Mobile: first 2 images
-                // Tablet: first 4 images
-                // Desktop: first 8 images
-                index < (typeof window !== 'undefined' && window.innerWidth < 640 ? 2 
-                  : window.innerWidth < 1024 ? 4 
-                  : 8)
-              }
-              loading={index < 8 ? 'eager' : 'lazy'}
+              priority={index < 4} // Prioritize first 4 images
+              loading={index < 4 ? 'eager' : 'lazy'}
             />
           </Link>
 

@@ -15,7 +15,15 @@ function Products({ productsData }: { productsData: ProductType[] }) {
               src={product.image}
               alt={product.title}
               className="object-contain absolute inset-0 w-full h-full"
-              priority={index < 4} // Only prioritize first 4 images
+              priority={
+                // Mobile: first 2 images
+                // Tablet: first 4 images
+                // Desktop: first 8 images
+                index < (typeof window !== 'undefined' && window.innerWidth < 640 ? 2 
+                  : window.innerWidth < 1024 ? 4 
+                  : 8)
+              }
+              loading={index < 8 ? 'eager' : 'lazy'}
             />
           </Link>
 

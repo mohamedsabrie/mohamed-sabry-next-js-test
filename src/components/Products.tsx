@@ -6,7 +6,7 @@ import React from "react";
 function Products({ productsData }: { productsData: ProductType[] }) {
   return (
     <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-[30px] mt-24">
-      {productsData.map((product) => (
+      {productsData.map((product, index) => (
         <div key={product.id} className="flex flex-col ">
           <Link prefetch={false} href={`/product/${product.id}`} className="flex-1 flex justify-center items-center relative aspect-[3/4] w-full">
             <Image
@@ -15,6 +15,7 @@ function Products({ productsData }: { productsData: ProductType[] }) {
               src={product.image}
               alt={product.title}
               className="object-contain absolute inset-0 w-full h-full"
+              priority={index < 4} // Only prioritize first 4 images
             />
           </Link>
 

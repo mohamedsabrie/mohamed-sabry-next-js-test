@@ -23,9 +23,8 @@ export async function generateStaticParams() {
 }
 
 // Fix the params type in ProductPage
-async function ProductPage({ params }: {   params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
+async function ProductPage({ params }: { params: { id: string } }) {
+  const { id } = params;  // Remove await since params is no longer a Promise
 
   const data = await fetch(`https://fakestoreapi.com/products/${id}`);
   const productData = await data.json();
@@ -38,8 +37,9 @@ async function ProductPage({ params }: {   params: Promise<{ id: string }>;
           width={400}
           height={600}
           src={image}
-          alt="product image"
+          alt={productData.title}
           className="object-contain w-auto h-auto max-h-[600px]"
+          priority={true}  // Prioritize loading for main product image
         />
       </div>
       <ProductDetails productData={productData} />
@@ -47,12 +47,13 @@ async function ProductPage({ params }: {   params: Promise<{ id: string }>;
   );
 }
 
+// Fix the generateMetadata params type as well
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string }  // Remove Promise type
 }): Promise<Metadata> {
-  const { id } = await params
+  const { id } = params  // Remove await
   const data = await fetch(`https://fakestoreapi.com/products/${id}`);
   const product = await data.json();
 

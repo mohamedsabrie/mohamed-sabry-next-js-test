@@ -19,9 +19,9 @@ function Products({ productsData }: { productsData: ProductType[] }) {
           </Link>
 
           <div className="flex flex-col">
-            <h3 className="mt-5 line-clamp-2 min-h-[48px]" title={product.title}>
+            <h2 className="mt-5 line-clamp-2 min-h-[48px] text-base font-normal" title={product.title}>
               <Link prefetch={false} href={`/product/${product.id}`}>{product.title}</Link>
-            </h3>
+            </h2>
             <span className="text-sm text-gray-500 mt-1">{product.category}</span>
             <p className="font-jost mt-1">${product.price}</p>
           </div>

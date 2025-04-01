@@ -32,15 +32,17 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
-      <div className="flex justify-center aspect-[2/3] relative w-full max-w-[400px]">
-        <Image
-          width={400}
-          height={600}
-          src={image}
-          alt={productData.title}
-          className="object-contain"
-          priority={true}
-        />
+      <div className="flex justify-center">
+        <div className="flex justify-center md:items-start aspect-[2/3] relative w-full max-w-[400px]">
+          <Image
+            width={400}
+            height={600}
+            src={image}
+            alt={productData.title}
+            className="object-contain"
+            priority={true}
+          />
+        </div>
       </div>
       <ProductDetails productData={productData} />
     </div>

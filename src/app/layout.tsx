@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   keywords: ['fashion', 'online shopping', 'ecommerce', 'clothing', 'accessories'],
   authors: [{ name: 'FASCO Store' }],
   icons: {
-    icon: '/og-image.webp',
-    shortcut: '/og-image.webp',
-    apple: '/og-image.webp',
+    icon: '/og-image.png',
+    shortcut: '/og-image.png',
+    apple: '/og-image.png',
   },
   openGraph: {
     title: 'FASCO | Modern Online Shopping Experience',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://fasco-sabry-store.vercel.app/og-image.webp',
+        url: 'https://fasco-sabry-store.vercel.app/og-image.png', // Change to PNG/JPG
         width: 1200,
         height: 630, // Standard OG image dimensions
         alt: 'FASCO Store Preview'
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FASCO | Modern Online Shopping Experience',
     description: 'Discover a wide range of products with our easy-to-use shopping platform.',
-    images: ['https://fasco-sabry-store.vercel.app/og-image.webp'], 
+    images: ['https://fasco-sabry-store.vercel.app/og-image.png'], // Match OG image
   },
   viewport: 'width=device-width, initial-scale=1',
   robots: {

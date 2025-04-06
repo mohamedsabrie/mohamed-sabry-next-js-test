@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://fasco-sabry-store.vercel.app/og-image.png', // Change to PNG/JPG
+        url: '/og-image.png', // Change to PNG/JPG
         width: 1200,
         height: 630, // Standard OG image dimensions
         alt: 'FASCO Store Preview'
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FASCO | Modern Online Shopping Experience',
     description: 'Discover a wide range of products with our easy-to-use shopping platform.',
-    images: ['https://fasco-sabry-store.vercel.app/og-image.png'], // Match OG image
+    images: ['/og-image.png'], // Match OG image
   },
   viewport: 'width=device-width, initial-scale=1',
   robots: {

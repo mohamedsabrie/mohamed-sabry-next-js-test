@@ -59,8 +59,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deploy on Vercel
 
-please check the link below
-https://fasco-sabry-store.vercel.app/
+Production: https://fasco-sabry-store.vercel.app/
+Development (Performance Optimized): https://fasco-sabry-dev-store.vercel.app/
+
+The development version includes optimizations for:
+- Improved Largest Contentful Paint (LCP)
+- Reduced Cumulative Layout Shift (CLS)
+- Enhanced image loading strategies
+- Optimized client-side hydration
+- Better responsive layout handling
 
 
 ## Performance & SEO Optimizations
